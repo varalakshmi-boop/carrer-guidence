@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)file:///C:/mini-project/career-guide.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+        
+        body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f8ff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+ #about-us{
+            background-color: white;
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        #about-us h1, #about h2 {
+            color: #003366;
+        }
+
+        #about-us p {
+            line-height: 1.6;
+            color: #333;
+        }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+    }
+
+    .main-section {
+      padding: 40px 20px;
+    }
+
+    button {
+      background-color: #008cba;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #005f7f;
+    }
+
+    .platform-buttons {
+      display: flex;
+      flex-direction: column; /* Display buttons in a vertical column */
+      align-items: center; /* Center the buttons */
+      margin-top: 20px;
+    }
+
+    .career-content {
+      margin-top: 20px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      display: none;
+    }
+
+    .career-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+
+    @media (max-width: 768px) {
+      button {
+        padding: 10px 16px;
+        font-size: 14px;
+      }
+
+      header {
+        font-size: 20px;
+        padding: 15px;
+      }
+
+      .main-section {
+        padding: 20px 10px;
+      }
+
+      .career-content {
+        padding: 15px;
+      }
+    }
+
+        header {
+            background: #FF6B01;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #353535;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background: #FF6B01;
+            color: #FFFFFF;
+            transform: scale(1.1);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto;
+            width:50%;
+        }
+        .welcome {
+            font-size: 26px;
+            color: #000000;
+            background: #FF6B01;
+            padding: 20px;
+            width: 50%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: normal;
+            margin-left: 20px;
+        }
+        .welcome:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .main-image {
+            width: 50%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .main-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .info {
+            width: 80%;
+            margin: 30px auto;
+            font-size: 18px;
+            color: #FFFFFF;
+            background: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: justify;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: normal;
+        }
+        .info:hover {
+            transform: scale(1.02);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .section {
+            display: none; /* Hide sections initially */
+            padding: 20px;
+        }
+        #home {
+            display: block; /* Show home section by default */
+        }
+        .career-paths ul {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+        }
+        .career-paths ul li {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+/* Style for the button */
+        .toggle-button {
+            background: #FF6B01;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .toggle-button:hover {
+            background: #e65a00;
+            transform: scale(1.05);
+        }/* Hidden content */
+        #career-options {
+            display: none;
+            text-align: left;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 60%;
+            margin: 20px auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+}
+  .hidden {
+            display: none;
+        }
+        .course-btn {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 2px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 300px;
+            border-radius: 5px;
+        }
+.course1-btn {
+           font-family: 'Poppins', sans-serif;
+             width: 40%;
+            margin: 30px auto;
+            font-size: 19px;
+            color: #FFFFFF;
+            background:#353535;
+            padding: 2px;
+            border-radius: 10px;            
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+           
+}
+        .course-btn:hover {
+            background-color:  #FF6B01;
+        }
+        .info-box {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: white;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+
+    </style>
+    <script>
+  function showPlatforms() {
+      document.getElementById('platforms').style.display = 'flex';
+    }
+
+    function showContent(type, button) {
+      // Create or toggle content block dynamically below the clicked button
+      const existingContent = button.nextElementSibling;
+      if (existingContent && existingContent.classList.contains('career-content')) {
+        existingContent.style.display = existingContent.style.display === 'block' ? 'none' : 'block';
+        return;
+      }
+
+      // Create new content box
+      const contentBox = document.createElement('div');
+      contentBox.classList.add('career-content');
+      
+      let imagePath = '';
+
+switch (type) {
+  case 'diploma':
+    imagePath = 'dip.jpg';
+    break;
+  case 'inter':
+    imagePath = 'inter.jpg';
+    break;
+  case 'iti':
+    imagePath = 'iti.jpg';
+    break;
+  case 'polytechnic':
+    imagePath = 'poly.jpg';
+    break;
+  case 'vocational':
+    imagePath = 'voca.jpg';
+    break;
+  case 'paramedical':
+    imagePath = 'para.jpg';
+    break;
+  case 'finearts':
+    imagePath = 'art.jpg';
+    break;
+  case 'sports':
+    imagePath = 'sport.jpg';
+    break;
+  case 'defense':
+    imagePath = 'defence.jpg';
+    break;
+  case 'agriculture':
+    imagePath = 'agri.jpg';
+    break;
+  case 'civil_services':
+    imagePath = 'ias.jpg';
+    break;
+  case 'ca':
+    imagePath = 'ca.jpg';
+    break;
+  default:
+    imagePath = 'images/default.jpg';
+}
+
+      let content = '';
+
+      const data = {
+        diploma: {
+          title: "Diploma Courses",
+          duration: "3 years",
+          details: [
+            "Eligibility: SSC passed students",
+            "Examples: Engineering, Nursing, Agriculture diplomas",
+            "Career Opportunities: Junior Engineer, Lab Assistant, Technician",
+            "Use: Practical knowledge and job-readiness in technical fields",
+            "Benefits: Hands-on training, industry exposure, early career start",
+            "Further Studies: Can join B.Tech via lateral entry",
+            "Best Colleges: Govt Polytechnic, Andhra Polytechnic, GPT Narsipatnam"
+          ]
+        },
+        inter: {
+          title: "Intermediate (MPC/BiPC/CEC)",
+          duration: "2 years",
+          details: [
+            "MPC: JEE, EAMCET for Engineering",
+            "BiPC: NEET, Pharmacy, Agriculture",
+            "CEC: CA, Law, Business courses",
+            "Use: Foundation for higher studies",
+            "Benefits: Builds analytical, logical and subject-specific skills",
+            "Higher Education: Degree or Professional programs",
+            "Best Colleges: Narayana, Sri Chaitanya, Govt Colleges"
+          ]
+
+        },
+        iti: {
+          title: "ITI Courses",
+          duration: "1-2 years",
+          details: [
+            "Trades: Electrician, Fitter, Welder, Plumber",
+            "Use: Immediate skill-based jobs",
+            "Benefits: Quick employment, low-cost training",
+            "Further Studies: Diploma or Apprenticeship",
+            "Best Colleges: Govt ITIs, Private Industrial Training Institutes"
+          ]
+        },
+        polytechnic: {
+          title: "Polytechnic",
+          duration: "3 years",
+          details: [
+            "Focus: Engineering & Technical Education",
+            "Use: Direct jobs or lateral B.Tech entry",
+            "Benefits: Affordable, practical skill development",
+            "Best Colleges: SBTET Colleges, Andhra Polytechnic"
+          ]
+        },
+        vocational: {
+          title: "Vocational Courses",
+          duration: "6 months - 2 years",
+          details: [
+            "Courses: Computer, Beauty, Tailoring, Retail",
+            "Use: Self-employment or retail jobs",
+            "Benefits: Flexibility, career-focused, entrepreneurship",
+            "Best Centers: NSDC Approved Training Partners"
+          ]
+        },
+        paramedical: {
+          title: "Paramedical Courses",
+          duration: "1-2 years",
+          details: [
+            "Examples: X-Ray Technician, Lab Assistant, ANM",
+            "Use: Medical support roles",
+            "Benefits: High demand, good salaries",
+            "Best Colleges: Govt & Private Paramedical Colleges"
+          ]
+        },
+        finearts: {
+          title: "Fine Arts",
+          duration: "3-4 years",
+          details: [
+            "Courses: Music, Dance, Drawing, Drama",
+            "Use: Artist careers or teaching",
+            "Benefits: Skill enhancement, expression, fame",
+            "Best Institutes: JNAFAU Hyderabad, Local Art Colleges"
+          ]
+        },
+        sports: {
+          title: "Sports Academies",
+          duration: "1-4 years",
+          details: [
+            "Training: Cricket, Athletics, Football, etc.",
+            "Use: Professional sports or fitness career",
+            "Benefits: Discipline, health, travel opportunities",
+            "Best Academies: SAI, State Sports Academies"
+          ]
+        },
+        defense: {
+          title: "Defense Services",
+          duration: "1+ years (training)",
+          details: [
+            "Paths: Army, Navy, Air Force (via NDA, Soldier level)",
+            "Use: Serve the nation with pride",
+            "Benefits: Job security, honor, pension",
+            "Best Institutes: Sainik Schools, RIMC, NCC"
+          ]
+        },
+        agriculture: {
+          title: "Agriculture Courses",
+          duration: "1-4 years",
+          details: [
+            "Courses: Diploma in Agriculture, B.Sc Agri",
+            "Use: Modern farming, Agri-tech jobs",
+            "Benefits: High potential in rural areas",
+            "Best Colleges: ANGRAU, Agricultural Polytechnics"
+          ]
+        },
+        civil_services: {
+          title: "IAS, IPS, IFS Preparation",
+          duration: "Varies",
+          details: [
+            "Path: Graduate + UPSC Coaching",
+            "Use: Administrative services in the government",
+            "Benefits: Prestige, power, high salary",
+            "Best Institutes: Vajiram & Ravi, ALS IAS"
+          ]
+        },
+        ca: {
+          title: "Chartered Accountant (CA)",
+          duration: "3-5 years",
+          details: [
+            "Path: CA Foundation, CA Intermediate, CA Final",
+            "Use: Financial expertise, accounting, taxation",
+            "Benefits: High-paying career, global recognition",
+            "Best Institutes: ICAI, Regional CA Institutes"
+          ]
+        }
+      };
+
+      const course = data[type];
+      content = `<h2>${course.title}</h2>
+                 <p><strong>Duration:</strong> ${course.duration}</p>
+                 <p><strong>Details:</strong></p><ul>`;
+
+      course.details.forEach(item => {
+        content += `<li>${item}</li>`;
+      });
+
+    content += `</ul>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <img src="${imagePath}" alt="${course.title}" style="width:200px; height:150px; object-fit:cover;" />
+  </div>`;
+
+
+
+      contentBox.innerHTML = content;
+
+      // Append the new content box below the clicked button
+      button.parentNode.insertBefore(contentBox, button.nextElementSibling);
+      contentBox.style.display = 'block';
+    }
+function toggleReferences() {
+  const refSection = document.getElementById('references-section');
+  refSection.style.display = refSection.style.display === 'none' ? 'block' : 'none';
+}
+
+ 
+      function showSection(sectionId) {
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function toggleCareerOptions() {
+            var options = document.getElementById('career-options');
+            if (options.style.display === "none" || options.style.display === "") {
+                options.style.display = "block";
+            } else {
+                options.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>Career Guidance</header>
+    
+    <nav>
+        <a onclick="showSection(&#39;home&#39;)">Home</a>
+        <a onclick="showSection(&#39;career-paths&#39;)">Career Paths</a>
+        <a onclick="showSection(&#39;references&#39;)">References</a>
+        <a onclick="showSection(&#39;about-us&#39;)">About Us</a>
+    </nav>
+    
+    <!-- Home Section -->
+    <div id="home" class="section" style="display: block;">
+        <div class="content">
+            
+            <img src="./Career Guidance_files/career-guidance.jpg" alt="Career Guidance" class="main-image">
+            <div class="welcome">
+                "Your Future Starts Here: Discover the Right Career Path for You"
+            </div>
+        </div>
+        
+        <div class="info">
+            Choosing the right career path after 10th grade is a crucial decision that shapes a student's future. 
+            This website provides comprehensive guidance on available courses, their duration, and the best colleges 
+            to pursue them. Whether you aim for engineering, medicine, commerce, or vocational training, we offer 
+            detailed insights to help you make an informed choice. Explore different career options and find the 
+            path that best suits your skills and interests.
+        </div>
+    </div>
+
+    <!-- Career Paths Section -->
+    <div id="career-paths" class="section" style="display: none;">
+        <h2>Career Paths After 10th</h2>
+        <p>Click the button below to explore career options after 10th grade.</p>
+        <button onclick="showPlatforms()">Explore Career Options</button>
+
+    <div class="platform-buttons" id="platforms" style="display: none;">
+      <button onclick="showContent(&#39;diploma&#39;, this)">Diploma Courses</button>
+      <button onclick="showContent(&#39;inter&#39;, this)">Intermediate (MPC/BiPC/CEC)</button>
+      <button onclick="showContent(&#39;iti&#39;, this)">ITI Courses</button>
+      <button onclick="showContent(&#39;polytechnic&#39;, this)">Polytechnic</button>
+      <button onclick="showContent(&#39;vocational&#39;, this)">Vocational Courses</button>
+      <button onclick="showContent(&#39;paramedical&#39;, this)">Paramedical Courses</button>
+      <button onclick="showContent(&#39;finearts&#39;, this)">Fine Arts</button>
+      <button onclick="showContent(&#39;sports&#39;, this)">Sports Academies</button>
+      <button onclick="showContent(&#39;defense&#39;, this)">Defense Services</button>
+      <button onclick="showContent(&#39;agriculture&#39;, this)">Agriculture Courses</button>
+      <button onclick="showContent(&#39;civil_services&#39;, this)">IAS, IPS, IFS Preparation</button>
+      <button onclick="showContent(&#39;ca&#39;, this)">Chartered Accountant (CA)</button>
+    </div>
+  </div>
+
+
+    
+
+
+
+    <!-- References Section -->
+    <div id="references" class="section" style="display: none;">
+        
+        <p>Here you can find links to career guidance resources and expert opinions.</p>
+<button onclick="toggleReferences()">References</button>
+<div id="references-section" class="career-content" style="display: block;">
+  <h3>Useful References &amp; Links</h3>
+  <ul>
+    <li><a href="https://www.icai.org/" target="_blank">ICAI - Chartered Accountants</a></li>
+    <li><a href="https://www.upsc.gov.in/" target="_blank">UPSC - Civil Services</a></li>
+    <li><a href="https://www.angrau.ac.in/" target="_blank">ANGRAU - Agriculture University</a></li>
+    <li><a href="https://sainikschool.ncog.gov.in/" target="_blank">Sainik Schools</a></li>
+    <li><a href="https://nsdcindia.org/" target="_blank">NSDC - Vocational Training</a></li>
+    <li><a href="https://www.nta.ac.in/" target="_blank">NTA - Entrance Exams Info</a></li>
+    <li><a href="https://www.jnafau.ac.in/" target="_blank">JNAFAU - Fine Arts</a></li>
+    <li><a href="https://polytechnic.ap.gov.in/" target="_blank">AP Polytechnic Info</a></li>
+  </ul>
+</div>
+
+
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about-us" class="section" style="display: none;">
+        <h2>About Us</h2>
+        <p>We are Pokala Varalakshmi and Puli Sathwika — two students who once faced the same confusion many others do after 10th grade. We know how overwhelming it can be to choose the right path without proper guidance. That’s why we created this website — to be the helping hand we once needed.</p>
+    <p>Our mission is to support and inspire students like you to make confident, informed decisions about your future. Remember, every great journey begins with a single step — and we’re here to walk with you.</p>
+        <p>Thank you for visiting, and never stop believing in your potential!</p>
+<h2>Contact Us</h2>
+        <p>📧 <a href="mailto:studentguiders.help@gmail.com">studentguiders.help@gmail.com</a></p>
+        <p>📞 Contact: +91 98765 43210</p></div>
+
+
+
+</body></html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Guidance</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F5E7DE;
+            text-align: center;
+        }
+        header {
+            background: #FF6B01;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #353535;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        nav a:hover {
+            background: #FF6B01;
+            transform: scale(1.1);
+        }
+        .section {
+            display: none;
+            padding: 20px;
+        }
+        #home {
+            display: block;
+        }
+        /* Button Styles */
+        .toggle-button {
+            background: #FF6B01;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        .toggle-button:hover {
+            background: #e65a00;
+            transform: scale(1.05);
+        }
+        /* Container for Courses */
+        .container1 {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 70%;
+            margin: 20px auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        h2 {
+            cursor: pointer;
+            background: #FF6B01;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: 0.3s;
+        }
+        h2:hover {
+            background: #e65a00;
+        }
+        .content {
+            display: none;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].style.display = 'none';
+            }
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function toggleCareerOptions() {
+            var container = document.querySelector('.container1');
+            container.style.display = (container.style.display === "none" || container.style.display === "") ? "block" : "none";
+        }
+
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+        }
+    </script>
+</head>
+<body>
+    <header>Career Guidance</header>
+    
+    <nav>
+        <a onclick="showSection('home')">Home</a>
+        <a onclick="showSection('career-paths')">Career Paths</a>
+        <a onclick="showSection('references')">References</a>
+        <a onclick="showSection('about-us')">About Us</a>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home" class="section">
+        <h2>Welcome to Career Guidance</h2>
+        <p>Discover the right career path for your future.</p>
+    </div>
+
+    <!-- Career Paths Section -->
+    <div id="career-paths" class="section">
+        <h2>Career Paths After 10th</h2>
+        <p>Click the button below to explore career options after 10th grade.</p>
+        <button class="toggle-button" onclick="toggleCareerOptions()">Explore Career Options</button>
+
+        <!-- Career Options Container -->
+        <div class="container1">
+            <h1>Courses After 10th</h1>
+            
+            <h2 onclick="toggleContent('intermediate')">Intermediate (Class 11 & 12)</h2>
+            <div id="intermediate" class="content">
+                <strong>Science Stream:</strong> MPC, BiPC, MBiPC <br>
+                <strong>Commerce Stream:</strong> CEC, MEC <br>
+                <strong>Arts/Humanities:</strong> History, Political Science, Sociology, Psychology
+            </div>
+
+            <h2 onclick="toggleContent('polytechnic')">Polytechnic Courses</h2>
+            <div id="polytechnic" class="content">
+                Diploma courses in Engineering fields like Computer Science, Mechanical, Civil, etc.
+            </div>
+
+            <h2 onclick="toggleContent('iti')">ITI (Industrial Training Institute)</h2>
+            <div id="iti" class="content">
+                Short-term technical courses like Electrician, Fitter, Plumber, Welder, etc.
+            </div>
+
+            <h2 onclick="toggleContent('paramedical')">Paramedical & Healthcare Courses</h2>
+            <div id="paramedical" class="content">
+                DMLT, Radiology, Nursing, Pharmacy, Physiotherapy.
+            </div>
+
+            <h2 onclick="toggleContent('vocational')">Vocational Courses & Certifications</h2>
+            <div id="vocational" class="content">
+                Web Development, Digital Marketing, Graphic Design, Animation, Photography.
+            </div>
+
+            <h2 onclick="toggleContent('aviation')">Aviation & Maritime Courses</h2>
+            <div id="aviation" class="content">
+                Diploma in Aviation, Marine Engineering, Merchant Navy.
+            </div>
+
+            <h2 onclick="toggleContent('defense')">Defense & Government Jobs Preparation</h2>
+            <div id="defense" class="content">
+                NDA after 12th, Indian Navy & Army Technical Trades.
+            </div>
+
+            <h2 onclick="toggleContent('entrepreneurship')">Entrepreneurship & Business Courses</h2>
+            <div id="entrepreneurship" class="content">
+                Diploma in Business Management, Retail Management, Hotel Management.
+            </div>
+        </div>
+    </div>
+
+    <!-- References Section -->
+    <div id="references" class="section">
+        <h2>References</h2>
+        <p>Here you can find links to career guidance resources and expert opinions.</p>
+    </div>
+
+    <!-- About Us Section -->
+    <div id="about-us" class="section">
+        <h2>About Us</h2>
+        <p>We are dedicated to helping students make the best career choices through expert advice and real-world insights.</p>
+    </div>
+
+</body>
+</html>
